@@ -1,0 +1,25 @@
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finalapp
+  namespace: backend-ns
+  labels:
+    app: finalapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: finalapp
+  template:
+    metadata:
+      labels:
+        app: finalapp
+    spec:
+      containers:
+        - name: backend
+          image: alaadwidar/final-image:v1.0
+          ports:
+            - containerPort: 3000
+              protocol: TCP
