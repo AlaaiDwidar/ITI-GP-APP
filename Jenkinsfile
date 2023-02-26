@@ -25,10 +25,10 @@ pipeline {
                 git 'https://github.com/AlaaiDwidar/ITI-GP-APP.git'
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh """
-                kubectl create namespace app
-                kubectl apply -f /var/jenkins_home/workspace/Final-project-iti/deployment-app.yaml -n app 
+             
+                kubectl apply -f /var/jenkins_home/workspace/Final-project-iti/deployment-app.yaml
 
-                kubectl apply -f /var/jenkins_home/workspace/Final-project-iti/service-app.yaml -n app
+                kubectl apply -f /var/jenkins_home/workspace/Final-project-iti/service-app.yaml 
 
                 """
                 }
