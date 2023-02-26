@@ -7,8 +7,8 @@ pipeline {
                  withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh """
                 docker build . -f dockerfile -t alaadwidar/final-image:v1.0 --network host
-//                 sudo docker login -u ${USERNAME} -p ${PASSWORD}
-//                 sudo docker push alaadwidar/final-image:v1.0
+//              docker login -u ${USERNAME} -p ${PASSWORD}
+//              docker push alaadwidar/final-image:v1.0
 
                 git 'https://github.com/AlaaiDwidar/ITI-GP-APP.git'
                
