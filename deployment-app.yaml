@@ -16,6 +16,7 @@ spec:
       labels:
         app: finalapp
     spec:
+      serviceAccountName: jenkins-admin
       containers:
         - name: backend
           image: alaadwidar/final-image:v1.0
